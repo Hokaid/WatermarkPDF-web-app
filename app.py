@@ -68,7 +68,7 @@ def send():
             watermfile.save(os.path.join(os.path.join(basedir,"watermark/"), watermfile.filename))
             for file in uploadedfiles:
                 put_watermark(os.path.join(basedir,'uploads/'+file),os.path.join(basedir,'output/watermark_' + file),os.path.join(basedir,'watermark/'+watermfile.filename))
-            shutil.make_archive('resultado', 'zip', os.path.join(basedir,'output/'))
+            shutil.make_archive(os.path.join(basedir,"resultado"), 'zip', os.path.join(basedir,'output/'))
             return render_template('result.html')
     flash("Debe seleccionar una marca de agua y subir todos sus archivos en PDF")
     return redirect("/")
